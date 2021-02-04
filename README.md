@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+﻿Create-React-Mapp
+===================
+--By Aishwarya Agrawal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hey! Check out my new React Application for displaying a custom Map UI. It uses libraries ranging from **React** and **Redux** all the way to **Ant Design**
 
-## Available Scripts
+This web application focuses on displaying a live map UI, received from Open Street Map. It displays real-time maps with an option to skip to India, UK, or The USA. Including the live map renders, it also contains cards with data of locally used currency and units, to help improve the user experience.  
 
-In the project directory, you can run:
+----------
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<i class="icon-folder-open"></i>Documents
+-------------
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The file consists of a create-react-app style structure with node modules public and src folders with some package.json files. 
 
-### `npm test`
+Altered files,
+	<i class="icon-file"></i>  ./public/index.html
+	<i class="icon-file"></i>  ./src/index.js
+	<i class="icon-file"></i>  ./src/index.css
+	<i class="icon-file"></i> ./src/Components/Inputs.js
+	<i class="icon-file"></i>  ./src/Components/Map.js
+	<i class="icon-file"></i>  ./src/Components/data.js
+	<i class="icon-file"></i>  ./src/Components/card.css
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> **Note:**
+> - Play with any of the node_module folder at your own risk.
+> -A detailed description of different features is provided below.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Breakdown
+-------------------
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Let us look at the component-wise breakdown along with the info on which file contains which component 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### <i class="icon-pencil"></i> index.html
+This is practically unchanged, the original file that is created using Create-react-app is used with the app rendered in the **div** with the **id of root**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### <i class="icon-pencil"></i> index.js
+This contains the javascript file which renders the app. Imports are mainly the ant.design file which has been used to achieve the **Header-Sidebar-Footer** format and useState hooks that are responsible for changing the location on the map and data on the card. The structure of the app is defined here with styles present in **index.css**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+###Components
+#### <i class="icon-pencil"></i> Inputs.js
+It contains the structure of **dropdown box** and a **Load** button. These use the setState functions to change the current render on the screen. The data that is rendered on the cards for all the countries is stored in this file.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### <i class="icon-pencil"></i> Map.js
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+It contains the **background render**, i.e. the maps that are showed in the main body.  This dynamic feature is achieved by making an API request, the address of which is decided by useState hooks dynamically.  This API request, made can be tested by running on **postman**.
 
-## Learn More
+#### <i class="icon-pencil"></i> data.js
+This has the final component that is the **card component**. Not only does it store the card structure but also prints card data without directly storing it in the file. **card.css is imported** to it so as to provide the required styles.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+----------
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Other Info
+-------------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Considering the fact that the data for regions on the OSM API is huge and just downloading the data for 1 location would have taken >50GB, I decided to feed in the data directly to Inputs.js file so that just the data that is required is being stored.
+For any suggestions or feedback, write to aishwaryaagrawal1211@gmail.com
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
